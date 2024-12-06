@@ -1,9 +1,12 @@
+import LatestVisa from "../Component/LatestVisa";
+import Slideshow from "../Component/Slideshow";
 
 
 const Home = () => {
     return (
         <div>
-            Hello
+            <Slideshow></Slideshow>
+            <LatestVisa></LatestVisa>
         </div>
     );
 };
