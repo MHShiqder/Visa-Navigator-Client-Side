@@ -5,6 +5,8 @@ import Root from "../Layout/Root";
 import ErrorPage from "../Component/ErrorPage";
 import Login from "../Component/Login";
 import Register from "../Component/Register";
+import AddVisa from "../Component/AddVisa";
+import PrivateProfile from "../Component/PrivateProfile";
 
 
 const Router = createBrowserRouter([
@@ -25,6 +27,10 @@ const Router = createBrowserRouter([
         {
             path:"/register",
             element:<Register></Register>,
+        },
+        {
+            path:"/add-visa",
+            element:<PrivateProfile><AddVisa></AddVisa></PrivateProfile>,
         },
         
 
