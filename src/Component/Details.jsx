@@ -1,8 +1,24 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Details = () => {
+    const { user } = useContext(AuthContext)
     const { _id, CName, CImage, selectedType, PTime, Validity, Fee, Method, Age, Description, selectedOptions } = useLoaderData();
+    const handleApply = (e) => {
+        e.preventDefault()
+        const form=e.target;
+        const FName=form.FName.value;
+        const LName=form.LName.value;
+        const email=form.email.value;
+        const Fee=form.Fee.value;
+        const Date=form.Date.value;
+        const formData={FName,LName,email,Date,Fee}
 
+console.log(formData)
+e.target.reset()
+document.getElementById("my_modal_5").close()
+    }
     return (
         <div>
             <div className="card bg-base-100  shadow-xl">
@@ -24,14 +40,77 @@ const Details = () => {
                     <h3><span className="font-bold ">Required Document:</span>
                         {
 
-selectedOptions.map((option,idx)=><p key={idx}>{idx+1 } : {option}</p>)
+                            selectedOptions.map((option, idx) => <p key={idx}>{idx + 1} : {option}</p>)
                         }
                     </h3>
                     <div className="card-actions">
-                        <Link to={`/details/${_id}`}>
-                            <button className="btn mt-5 bg-sky-300">Apply For Visa</button>
-                        </Link>
+
+                        <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn mt-5 bg-sky-300">Apply For Visa</button>
+
                     </div>
+
+                    {/* modal  */}
+
+                    <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                        <div className="modal-box">
+                            <form onSubmit={handleApply}>
+
+                                {/* row 1 */}
+                                <div className="flex flex-col sm:flex-row sm:gap-5">
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="label-text">First Name</span>
+                                        </label>
+                                        <input type="text" name="FName" placeholder="Enter your first name" className="input input-bordered" required />
+                                    </div>
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="label-text">Last Name</span>
+                                        </label>
+                                        <input type="text" name="LName" placeholder="Enter your first name" className="input input-bordered" required />
+                                    </div>
+                                </div>
+
+
+                                {/* email row */}
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">E-mail</span>
+                                    </label>
+                                    <input type="text" name="email"
+                                        value={user.email} className="input input-bordered" readOnly />
+                                </div>
+
+                                {/* row 2 */}
+                                <div className="flex flex-col sm:flex-row sm:gap-5">
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="label-text">Applied Date</span>
+                                        </label>
+                                        <input type="text" name="Date" value={new Date().toDateString()} className="input input-bordered" readOnly />
+                                    </div>
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="label-text">Fees </span>
+                                        </label>
+                                        <input type="text" name="Fee"
+                                            value={Fee} className="input input-bordered" readOnly />
+                                    </div>
+                                </div>
+
+                                
+
+
+                            <div className="modal-action justify-center">
+                                
+                                    <button className="btn" type="submit">Submit</button>
+                                    <button onClick={()=>document.getElementById("my_modal_5").close()} className="btn" type="button">Close</button>
+                                
+                            </div>
+                            </form>
+                        </div>
+                    </dialog>
+
                 </div>
             </div>
         </div>
