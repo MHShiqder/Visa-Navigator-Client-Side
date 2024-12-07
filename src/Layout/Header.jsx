@@ -74,7 +74,10 @@ const Header = () => {
                                 <h2 className="text-black hidden group-hover:block">{user.displayName}</h2>
                                 <button onClick={handleSignOut} className="hidden group-hover:block btn bg-white   top-14 hover:bg-slate-100 ">Logout</button>
                             </div>
-                            :<Link to="/login" className="btn btn-ghost">Login</Link>
+                            :<div className="space-x-2">
+                                <Link to="/login" className="btn btn-ghost">Login</Link>
+                                <Link to="/register" className="btn btn-ghost">Register</Link>
+                            </div>
                         }
                     </div>
                 </div>
