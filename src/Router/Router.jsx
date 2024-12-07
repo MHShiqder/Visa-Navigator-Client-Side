@@ -8,6 +8,7 @@ import Register from "../Component/Register";
 import AddVisa from "../Component/AddVisa";
 import PrivateProfile from "../Component/PrivateProfile";
 import AllVisas from "../Component/AllVisas";
+import Details from "../Component/Details";
 
 
 const Router = createBrowserRouter([
@@ -36,6 +37,11 @@ const Router = createBrowserRouter([
         {
             path:"/all-visa",
             element:<AllVisas></AllVisas>,
+            loader:()=>fetch("http://localhost:5000/all-visa")
+        },
+        {
+            path:"/details",
+            element:<PrivateProfile><Details></Details></PrivateProfile>,
         },
         
 

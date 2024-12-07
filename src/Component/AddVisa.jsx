@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddVisa = () => {
+    const {user}=useContext(AuthContext)
+    const contributor=user.email;
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [selectedType, setSelectedType] = useState("");
     const handleTypes = (e) => {
@@ -30,7 +33,7 @@ const AddVisa = () => {
         const Validity = form.Validity.value
         const Method = form.Method.value
 
-        const formDocument = { CImage, CName, selectedType, PTime, selectedOptions, Description, Age, Fee, Validity, Method }
+        const formDocument = { CImage, CName, selectedType, PTime, selectedOptions, Description, Age, Fee, Validity, Method,contributor }
         fetch("http://localhost:5000/form", {
             method: "POST",
             headers: {

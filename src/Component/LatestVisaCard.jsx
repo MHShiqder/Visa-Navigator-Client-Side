@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LatestVisaCard = ({ form }) => {
     const { CName, CImage, selectedType, PTime, Validity, Fee, Method } = form
@@ -19,7 +20,9 @@ const LatestVisaCard = ({ form }) => {
                     <h3>Validity: {Validity}</h3>
                     <h3>Application method: {Method}</h3>
                     <div className="card-actions">
+                        <Link to="/details">
                         <button className="btn  bg-sky-300">See Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
