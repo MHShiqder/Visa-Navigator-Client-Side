@@ -1,23 +1,35 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Details = () => {
     const { user } = useContext(AuthContext)
     const { _id, CName, CImage, selectedType, PTime, Validity, Fee, Method, Age, Description, selectedOptions } = useLoaderData();
     const handleApply = (e) => {
         e.preventDefault()
-        const form=e.target;
-        const FName=form.FName.value;
-        const LName=form.LName.value;
-        const email=form.email.value;
-        const Fee=form.Fee.value;
-        const Date=form.Date.value;
-        const formData={FName,LName,email,Date,Fee}
-
-console.log(formData)
-e.target.reset()
-document.getElementById("my_modal_5").close()
+        const form = e.target;
+        const FName = form.FName.value;
+        const LName = form.LName.value;
+        const email = form.email.value;
+        const Fee = form.Fee.value;
+        const Date = form.Date.value;
+        const formData = { FName, LName, email, Date, Fee }
+        fetch("http://localhost:5000/apply",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success("Added the Application successfully")
+                console.log(data);
+            })
+        console.log(formData)
+        e.target.reset()
+        document.getElementById("my_modal_5").close()
     }
     return (
         <div>
@@ -98,15 +110,15 @@ document.getElementById("my_modal_5").close()
                                     </div>
                                 </div>
 
-                                
 
 
-                            <div className="modal-action justify-center">
-                                
+
+                                <div className="modal-action justify-center">
+
                                     <button className="btn" type="submit">Submit</button>
-                                    <button onClick={()=>document.getElementById("my_modal_5").close()} className="btn" type="button">Close</button>
-                                
-                            </div>
+                                    <button onClick={() => document.getElementById("my_modal_5").close()} className="btn" type="button">Close</button>
+
+                                </div>
                             </form>
                         </div>
                     </dialog>
