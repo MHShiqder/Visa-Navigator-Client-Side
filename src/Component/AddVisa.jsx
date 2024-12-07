@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const AddVisa = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
@@ -28,8 +29,20 @@ const AddVisa = () => {
         const Fee = parseInt(form.Fee.value)
         const Validity = form.Validity.value
         const Method = form.Method.value
+
         const formDocument = { CImage, CName, selectedType, PTime, selectedOptions, Description, Age, Fee, Validity, Method }
-        console.log(formDocument)
+        fetch("http://localhost:5000/form", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDocument),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success("Added the visa successfully")
+            })
     }
     return (
         <div className="w-11/12 mx-auto my-10 text-center">
@@ -156,7 +169,7 @@ const AddVisa = () => {
                 </div>
 
                 <div>
-                    <button className="btn btn-block mt-5 bg-sky-500 text-white hover:bg-sky-700">Login</button>
+                    <button className="btn btn-block mt-5 bg-sky-500 text-white hover:bg-sky-700">Add Visa</button>
 
                 </div>
 

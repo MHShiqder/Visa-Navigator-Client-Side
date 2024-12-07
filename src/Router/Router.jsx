@@ -7,6 +7,7 @@ import Login from "../Component/Login";
 import Register from "../Component/Register";
 import AddVisa from "../Component/AddVisa";
 import PrivateProfile from "../Component/PrivateProfile";
+import AllVisas from "../Component/AllVisas";
 
 
 const Router = createBrowserRouter([
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
         {
             path:"/add-visa",
             element:<PrivateProfile><AddVisa></AddVisa></PrivateProfile>,
+        },
+        {
+            path:"/all-visa",
+            element:<AllVisas></AllVisas>,
         },
         
 
