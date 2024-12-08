@@ -12,6 +12,7 @@ import Details from "../Component/Details";
 import AddedVisa from "../Component/AddedVisa";
 import PrivateAddedVisa from "../Component/PrivateAddedVisa";
 import MyVisaApplications from "../Component/MyVisaApplications";
+import Forget from "../Component/Forget";
 
 
 const Router = createBrowserRouter([
@@ -56,6 +57,10 @@ const Router = createBrowserRouter([
             path:"/visa-application/:email",
             element:<PrivateAddedVisa><MyVisaApplications></MyVisaApplications></PrivateAddedVisa>,
             loader:({params})=>fetch(`https://assignment-10-server-side-azure.vercel.app/visa-application/${params.email}`),
+        },
+        {
+            path:"/forget",
+            element:<Forget></Forget>,
         },
         
 
