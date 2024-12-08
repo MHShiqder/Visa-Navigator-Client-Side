@@ -11,7 +11,7 @@ const Header = () => {
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/">Home</NavLink>
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/all-visa">All visas</NavLink>
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/add-visa">Add Visa</NavLink>
-        <NavLink className="btn btn-ghost font-semibold mr-2" to="/about-us">About_Us</NavLink>
+        {user?<NavLink className="btn btn-ghost font-semibold mr-2" to={`/added-visa/${user?.email}`}>My added visas</NavLink>:<NavLink className="btn btn-ghost font-semibold mr-2" to={`/login`}>My added visas</NavLink>}
         {
             user && <NavLink className="btn btn-ghost font-semibold mr-2" to="/profile">Profile</NavLink>
         }

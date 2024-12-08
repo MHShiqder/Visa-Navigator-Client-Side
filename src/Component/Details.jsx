@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const Details = () => {
     const { user } = useContext(AuthContext)
-    const { _id, CName, CImage, selectedType, PTime, Validity, Fee, Method, Age, Description, selectedOptions } = useLoaderData();
+    const {  CName, CImage, selectedType, PTime, Validity, Fee, Method, Age, Description, selectedOptions } = useLoaderData();
     const handleApply = (e) => {
         e.preventDefault()
         const form = e.target;
