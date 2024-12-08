@@ -21,7 +21,7 @@ const Newsletter = () => {
     return (
         <div id="animateMe4" className={`text-center w-11/12 mx-auto space-y-5 my-10 py-10 bg-sky-300 animate__animated ${isVisible ? 'animate__fadeInLeft' : ''}`}>
             <h3 className="text-5xl font-bold">Subscribe to Newsletter</h3>
-            <p className="text-xl ">Stay updated with our latest news and offers</p>
+            <p className="text-xl ">Stay updated with our latest visas and offers</p>
 
             <div className="md:join">
                 <input className="input input-bordered join-item rounded-lg" placeholder="Email" />
