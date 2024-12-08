@@ -4,7 +4,7 @@ import LatestVisaCard from "./LatestVisaCard";
 const AllVisas = () => {
     const formData = useLoaderData();
     return (
-        <div className="w-11/12 mx-auto text-center"> 
+        <div className="w-11/12 mx-auto my-10 text-center"> 
         <div>
             <h2 className="text-5xl font-bold m-5">All Visas</h2>
         </div>

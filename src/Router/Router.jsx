@@ -11,6 +11,7 @@ import AllVisas from "../Component/AllVisas";
 import Details from "../Component/Details";
 import AddedVisa from "../Component/AddedVisa";
 import PrivateAddedVisa from "../Component/PrivateAddedVisa";
+import MyVisaApplications from "../Component/MyVisaApplications";
 
 
 const Router = createBrowserRouter([
@@ -50,6 +51,11 @@ const Router = createBrowserRouter([
             path:"/added-visa/:email",
             element:<PrivateAddedVisa><AddedVisa></AddedVisa></PrivateAddedVisa>,
             loader:({params})=>fetch(`http://localhost:5000/added-visa/${params.email}`),
+        },
+        {
+            path:"/visa-application/:email",
+            element:<PrivateAddedVisa><MyVisaApplications></MyVisaApplications></PrivateAddedVisa>,
+            loader:({params})=>fetch(`http://localhost:5000/visa-application/${params.email}`),
         },
         
 

@@ -1,4 +1,5 @@
 import LatestVisa from "../Component/LatestVisa";
+import Newsletter from "../Component/Newsletter";
 import Slideshow from "../Component/Slideshow";
 
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Slideshow></Slideshow>
             <LatestVisa></LatestVisa>
+            <Newsletter></Newsletter>
         </div>
     );
 };

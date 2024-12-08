@@ -14,7 +14,7 @@ const Details = () => {
         const email = form.email.value;
         const Fee = form.Fee.value;
         const Date = form.Date.value;
-        const formData = { FName, LName, email, Date, Fee }
+        const formData = { FName, LName, email, Date, Fee,CName, CImage, selectedType, PTime, Validity,  Method }
         fetch("http://localhost:5000/apply",{
             method: "POST",
             headers: {

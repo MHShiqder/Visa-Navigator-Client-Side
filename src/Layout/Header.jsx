@@ -11,10 +11,11 @@ const Header = () => {
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/">Home</NavLink>
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/all-visa">All visas</NavLink>
         <NavLink className="btn btn-ghost font-semibold mr-2" to="/add-visa">Add Visa</NavLink>
+
         {user?<NavLink className="btn btn-ghost font-semibold mr-2" to={`/added-visa/${user?.email}`}>My added visas</NavLink>:<NavLink className="btn btn-ghost font-semibold mr-2" to={`/login`}>My added visas</NavLink>}
-        {
-            user && <NavLink className="btn btn-ghost font-semibold mr-2" to="/profile">Profile</NavLink>
-        }
+
+        {user?<NavLink className="btn btn-ghost font-semibold mr-2" to={`/visa-application/${user?.email}`}>My Visa applications</NavLink>:<NavLink className="btn btn-ghost font-semibold mr-2" to={`/login`}>My Visa applications</NavLink>}
+        
     </>
     const handleSignOut=()=>{
         userSignOut()
@@ -56,7 +57,7 @@ const Header = () => {
                             </ul>
                         </div>
                         <Link to="/">
-                        <img className="h-10 " src={logo} alt="" />
+                        <h1 className="text-4xl font-bold border-2 border-white px-2 py-1">VN</h1>
                         </Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">

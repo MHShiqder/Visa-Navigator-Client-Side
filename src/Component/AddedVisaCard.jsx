@@ -11,7 +11,7 @@ const AddedVisaCard = ({ visa, setVisas, Visas }) => {
         setSelectedType2(e.target.value);
     };
 
-    
+    // modal update section 
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
