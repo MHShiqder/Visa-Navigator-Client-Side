@@ -40,22 +40,22 @@ const Router = createBrowserRouter([
         {
             path:"/all-visa",
             element:<AllVisas></AllVisas>,
-            loader:()=>fetch("http://localhost:5000/all-visa")
+            loader:()=>fetch("https://assignment-10-server-side-azure.vercel.app/all-visa")
         },
         {
             path:"/details/:id",
             element:<PrivateProfile><Details></Details></PrivateProfile>,
-            loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`),
+            loader:({params})=>fetch(`https://assignment-10-server-side-azure.vercel.app/details/${params.id}`),
         },
         {
             path:"/added-visa/:email",
             element:<PrivateAddedVisa><AddedVisa></AddedVisa></PrivateAddedVisa>,
-            loader:({params})=>fetch(`http://localhost:5000/added-visa/${params.email}`),
+            loader:({params})=>fetch(`https://assignment-10-server-side-azure.vercel.app/added-visa/${params.email}`),
         },
         {
             path:"/visa-application/:email",
             element:<PrivateAddedVisa><MyVisaApplications></MyVisaApplications></PrivateAddedVisa>,
-            loader:({params})=>fetch(`http://localhost:5000/visa-application/${params.email}`),
+            loader:({params})=>fetch(`https://assignment-10-server-side-azure.vercel.app/visa-application/${params.email}`),
         },
         
 

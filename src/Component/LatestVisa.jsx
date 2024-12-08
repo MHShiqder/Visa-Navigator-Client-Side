@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const LatestVisa = () => {
     const [formData, setFormData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/form")
+        fetch("https://assignment-10-server-side-azure.vercel.app/form")
             .then(res => res.json())
             .then(data => {
                 setFormData(data);

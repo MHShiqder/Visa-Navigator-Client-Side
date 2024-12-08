@@ -34,7 +34,7 @@ const AddVisa = () => {
         const Method = form.Method.value
 
         const formDocument = { CImage, CName, selectedType, PTime, selectedOptions, Description, Age, Fee, Validity, Method,contributor }
-        fetch("http://localhost:5000/form", {
+        fetch("https://assignment-10-server-side-azure.vercel.app/form", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

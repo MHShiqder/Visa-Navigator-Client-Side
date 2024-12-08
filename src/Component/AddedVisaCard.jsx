@@ -24,7 +24,7 @@ const AddedVisaCard = ({ visa, setVisas, Visas }) => {
         const Method = form.Method.value
 
         const formDocument = { CImage, CName, selectedType2, PTime,  Age, Fee, Validity, Method, }
-        fetch(`http://localhost:5000/all-visa/${_id}`, {
+        fetch(`https://assignment-10-server-side-azure.vercel.app/all-visa/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const AddedVisaCard = ({ visa, setVisas, Visas }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/all-visa/${_id}`, {
+                fetch(`https://assignment-10-server-side-azure.vercel.app/all-visa/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

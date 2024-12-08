@@ -15,7 +15,7 @@ const Details = () => {
         const Fee = form.Fee.value;
         const Date = form.Date.value;
         const formData = { FName, LName, email, Date, Fee,CName, CImage, selectedType, PTime, Validity,  Method }
-        fetch("http://localhost:5000/apply",{
+        fetch("https://assignment-10-server-side-azure.vercel.app/apply",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
