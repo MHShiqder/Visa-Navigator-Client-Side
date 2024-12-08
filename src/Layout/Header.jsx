@@ -70,12 +70,12 @@ const Header = () => {
                     <div className="navbar-end w-1/3 md:w-1/2">
                         {
                             user
-                            ?<div className="flex group hover:bg-sky-300 absolute flex-col p-3 pt-1 rounded-lg top-1  gap-2 items-end my-2 sm:my-auto">
+                            ?<div className="flex group hover:bg-sky-300 absolute flex-col p-3 pt-1 rounded-lg top-1  gap-2 items-end my-2 my-auto">
                                 <img className="w-12 h-12 rounded-full object-cover " src={`${user.photoURL}`} alt="" />
                                 <h2 className="text-black hidden group-hover:block">{user.displayName}</h2>
                                 <button onClick={handleSignOut} className="hidden group-hover:block btn bg-white   top-14 hover:bg-slate-100 ">Logout</button>
                             </div>
-                            :<div className="space-x-2">
+                            :<div className="sm:space-x-2">
                                 <Link to="/login" className="btn btn-ghost">Login</Link>
                                 <Link to="/register" className="btn btn-ghost">Register</Link>
                             </div>

@@ -31,7 +31,7 @@ const MyVisaApplications = () => {
                 <input type="text" name="country" className="input input-bordered join-item" />
                 <button type="submit" className="btn join-item bg-sky-300">Search</button>
             </form>
-                <button onClick={handleReset} className="btn btn-outline ml-10">Reset</button>
+                <button onClick={handleReset} className="btn btn-outline sm:ml-10">Reset</button>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

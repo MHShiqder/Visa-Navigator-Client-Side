@@ -22,7 +22,6 @@ const Home = () => {
     }, [])
     return (
         <div className="text-center">
-
             <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" className="btn btn-outline mt-5 ">Dark \ Light</button>
 
             {/* Typewriter text  */}

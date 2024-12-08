@@ -54,7 +54,7 @@ const AddVisa = () => {
 
 
                 {/* form row 1 */}
-                <div className="flex gap-5">
+                <div className="flex flex-col sm:flex-row  gap-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Country Image</span>
@@ -70,7 +70,7 @@ const AddVisa = () => {
                 </div>
 
                 {/* form row 2*/}
-                <div className="flex gap-5">
+                <div className="flex flex-col sm:flex-row  gap-5">
                     <div className="form-control w-full relative">
                         <label className="label">
                             <span className="label-text">Visa Type</span>
@@ -93,11 +93,11 @@ const AddVisa = () => {
                 </div>
 
                 {/* form row 3*/}
-                <div className="flex gap-5">
+                <div className="flex flex-col sm:flex-row  gap-5">
                     <div className=" bg-white form-control w-full">
                         <h3 className="label text-sm px-1 py-2">Required Documents</h3>
                         <div className="space-y-2 p-3 border rounded-lg">
-                            <label className="flex items-center space-x-3 text-gray-700">
+                            <label className="flex flex-col sm:flex-row  items-center space-x-3 text-gray-700">
                                 <input
                                     onChange={handleChange}
                                     type="checkbox"
@@ -108,7 +108,7 @@ const AddVisa = () => {
                                 <span>Valid Passport</span>
                             </label>
 
-                            <label className="flex items-center space-x-3 text-gray-700">
+                            <label className="flex flex-col sm:flex-row  items-center space-x-3 text-gray-700">
                                 <input
                                     onChange={handleChange}
                                     type="checkbox"
@@ -119,7 +119,7 @@ const AddVisa = () => {
                                 <span>Visa Application Form</span>
                             </label>
 
-                            <label className="flex items-center space-x-3 text-gray-700">
+                            <label className="flex flex-col sm:flex-row  items-center space-x-3 text-gray-700">
                                 <input
                                     onChange={handleChange}
                                     type="checkbox"
@@ -140,7 +140,7 @@ const AddVisa = () => {
                 </div>
 
                 {/* form row 4 */}
-                <div className="flex gap-5">
+                <div className="flex flex-col sm:flex-row  gap-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Age Restriction</span>
@@ -156,7 +156,7 @@ const AddVisa = () => {
                 </div>
 
                 {/* form row 5 */}
-                <div className="flex gap-5">
+                <div className="flex flex-col sm:flex-row  gap-5">
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Validity</span>
